@@ -74,14 +74,14 @@ const OrdersPage = ({orders,handleSetorders}) => {
   };
 
   const statusLabels = {
-    new: 'Yangi',
-    preparing: 'Tayyorlanmoqda',
-    ready: 'Tayyor',
-    on_the_way: 'Yetkazilmoqda',
+    new: "Новый",
+    preparing: "Готовится",
+    ready: "Готов",
+    on_the_way: "В пути",
   };
 
   return (
-    <div className="p-4">
+    <div className="p-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         <DndContext
           collisionDetection={pointerWithin}
@@ -90,7 +90,7 @@ const OrdersPage = ({orders,handleSetorders}) => {
         >
           {statuses.map(status => (
             <div key={status} className="bg-gray-50 p-4 rounded-lg border border-gray-200 min-h-[300px]">
-              <h3 className="text-center font-bold mb-4 px-2 py-1 bg-blue-100 rounded">
+              <h3 className="text-center font-bold mb-4 px-2 py-1 bg-green-300 rounded">
                 {statusLabels[status]} ({orders.filter(o => o.status === status).length})
               </h3>
               <SortableContext
