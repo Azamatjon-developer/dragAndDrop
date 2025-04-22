@@ -12,6 +12,7 @@ import OrderCard from '../components/OrderCard';
 
 const statuses = ['new', 'preparing', 'ready', 'on_the_way'];
 
+
 const SortableOrder = ({ order }) => {
   const {
     attributes,
@@ -21,6 +22,7 @@ const SortableOrder = ({ order }) => {
     transition,
     isDragging,
   } = useSortable({ id: order.id });
+
 
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -36,9 +38,8 @@ const SortableOrder = ({ order }) => {
 };
 
 const OrdersPage = ({orders,handleSetorders}) => {
- 
   const [activeOrder, setActiveOrder] = useState(null);
-
+  
   const handleDragStart = (event) => {
     const { active } = event;
     const order = orders.find(o => o.id === active.id);
