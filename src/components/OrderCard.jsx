@@ -1,7 +1,6 @@
 import React from 'react';
 
 const OrderCard = ({ order }) => {
-  console.log(order)
   return (
     <div className="border p-4 rounded-md shadow-md bg-white mb-3">
       <p className="text-sm text-gray-500">ID: {order.id}</p>
